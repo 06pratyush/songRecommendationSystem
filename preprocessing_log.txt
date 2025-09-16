@@ -1,0 +1,71 @@
+2025-09-16 21:26:16,417 — INFO — Logging initialized. Output directory: outputs
+2025-09-16 21:26:16,417 — INFO — Reading CSV from: data/spotify_dataset.csv
+2025-09-16 21:26:16,531 — INFO — Loaded dataframe with shape: (32833, 23)
+2025-09-16 21:26:16,601 — INFO — Data summary: rows=32833 cols=23; duplicates=0
+2025-09-16 21:26:16,602 — INFO — Columns in dataset:
+track_id, track_name, track_artist, track_popularity, track_album_id, track_album_name, track_album_release_date, playlist_name, playlist_id, playlist_genre, playlist_subgenre, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration_ms
+2025-09-16 21:26:16,602 — INFO — Data types (first 10):
+track_id: object
+track_name: object
+track_artist: object
+track_popularity: int64
+track_album_id: object
+track_album_name: object
+track_album_release_date: object
+playlist_name: object
+playlist_id: object
+playlist_genre: object
+playlist_subgenre: object
+danceability: float64
+energy: float64
+key: int64
+loudness: float64
+mode: int64
+speechiness: float64
+acousticness: float64
+instrumentalness: float64
+liveness: float64
+2025-09-16 21:26:16,607 — INFO — First 5 rows:
+                 track_id                                             track_name      track_artist  track_popularity          track_album_id                                       track_album_name track_album_release_date playlist_name             playlist_id playlist_genre playlist_subgenre  danceability  energy  key  loudness  mode  speechiness  acousticness  instrumentalness  liveness  valence    tempo  duration_ms
+0  6f807x0ima9a1j3VPbc7VN  I Don't Care (with Justin Bieber) - Loud Luxury Remix        Ed Sheeran                66  2oCs0DGTsRO98Gh5ZSl2Cx  I Don't Care (with Justin Bieber) [Loud Luxury Remix]               14-06-2019     Pop Remix  37i9dQZF1DXcZDD7cfEKhW            pop         dance pop         0.748   0.916    6    -2.634     1       0.0583        0.1020          0.000000    0.0653    0.518  122.036       194754
+1  0r7CVbZTWZgbTCYdfa2P31                        Memories - Dillon Francis Remix          Maroon 5                67  63rPSO264uRjW1X5E6cWv6                        Memories (Dillon Francis Remix)               13-12-2019     Pop Remix  37i9dQZF1DXcZDD7cfEKhW            pop         dance pop         0.726   0.815   11    -4.969     1       0.0373        0.0724          0.004210    0.3570    0.693   99.972       162600
+2  1z1Hg7Vb0AhHDiEmnDE79l                        All the Time - Don Diablo Remix      Zara Larsson                70  1HoSmj2eLcsrR0vE9gThr4                        All the Time (Don Diablo Remix)               05-07-2019     Pop Remix  37i9dQZF1DXcZDD7cfEKhW            pop         dance pop         0.675   0.931    1    -3.432     0       0.0742        0.0794          0.000023    0.1100    0.613  124.008       176616
+3  75FpbthrwQmzHlBJLuGdC7                      Call You Mine - Keanu Silva Remix  The Chainsmokers                60  1nqYsOef1yKKuGOVchbsk6                            Call You Mine - The Remixes               19-07-2019     Pop Remix  37i9dQZF1DXcZDD7cfEKhW            pop         dance pop         0.718   0.930    7    -3.778     1       0.1020        0.0287          0.000009    0.2040    0.277  121.956       169093
+4  1e8PAfcKUYoKkxPhrHqw4x                Someone You Loved - Future Humans Remix     Lewis Capaldi                69  7m7vv9wlQ4i0LFuJiE2zsQ                Someone You Loved (Future Humans Remix)               05-03-2019     Pop Remix  37i9dQZF1DXcZDD7cfEKhW            pop         dance pop         0.650   0.833    1    -4.672     1       0.0359        0.0803          0.000000    0.0833    0.725  123.976       189052
+2025-09-16 21:26:16,607 — INFO — Using audio feature columns: ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms']
+2025-09-16 21:26:16,608 — INFO — Parsing release dates from column 'track_album_release_date' and extracting year into 'release_year'
+2025-09-16 21:26:16,625 — INFO — Parsed 30947 release years (non-null).
+2025-09-16 21:26:16,631 — INFO — Dropped 4477 duplicate rows based on subset=['track_id']. New shape: (28356, 24)
+2025-09-16 21:26:16,635 — INFO — Duplicate removal complete. Rows dropped: 4477
+2025-09-16 21:26:16,644 — INFO — Missing values per column (top 20):
+track_album_release_date    1681
+release_year                1681
+track_album_name               4
+track_name                     4
+track_artist                   4
+track_popularity               0
+track_album_id                 0
+track_id                       0
+playlist_name                  0
+playlist_id                    0
+playlist_subgenre              0
+playlist_genre                 0
+energy                         0
+key                            0
+loudness                       0
+danceability                   0
+mode                           0
+speechiness                    0
+instrumentalness               0
+acousticness                   0
+2025-09-16 21:26:16,917 — INFO — Saved missing values bar chart to outputs\missing_values_bar.png
+2025-09-16 21:26:16,924 — INFO — Capped 'loudness' to [-16.1699, -1.9161] (quantiles 0.01..0.99)
+2025-09-16 21:26:16,927 — INFO — Capped 'tempo' to [74.3427, 191.959] (quantiles 0.01..0.99)
+2025-09-16 21:26:16,931 — INFO — Capped 'duration_ms' to [109038, 437255] (quantiles 0.01..0.99)
+2025-09-16 21:26:21,957 — INFO — Saved feature distributions to outputs\feature_distributions.png
+2025-09-16 21:26:22,354 — INFO — Saved correlation heatmap to outputs\correlation_heatmap.png
+2025-09-16 21:26:22,362 — INFO — Saved StandardScaler to outputs\scaler.joblib
+2025-09-16 21:26:22,377 — INFO — Saved PCA (var=0.95) to outputs\pca.joblib; components=11
+2025-09-16 21:26:22,377 — INFO — Attaching PCA columns (n=11) to dataframe for inspection.
+2025-09-16 21:26:23,211 — INFO — Saved processed dataframe to: outputs\processed_spotify_data.csv
+2025-09-16 21:26:23,212 — INFO — Pipeline finished successfully.

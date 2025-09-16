@@ -1,2 +1,9 @@
-# songRecommendationSystem
-Spotify Genre Segmentation Project: A Python-based pipeline for analyzing Spotify data. Features data preprocessing, clustering with K-means, visualizations (distributions, correlation heatmap), and a recommendation system. Outputs include cluster plots and song recommendations. Built with pandas, sklearn, and plotly.
+
+## Outputs
+- Plots: `outputs/plots/`
+- Clusters: `outputs/clusters/`
+- Recommendations: Printed in console.
+
+## Notes
+- Dataset (`data/spotify_dataset.csv`) not included; use a sample or provide your own.
+- Generated outputs (`outputs/`) are excluded from version control.
