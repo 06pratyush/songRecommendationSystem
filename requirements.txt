@@ -1,0 +1,16 @@
+# Core data science stack
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# App / deployment
+streamlit
+
+# Jupyter notebook support
+notebook
+jupyterlab
+
+# Optional: utilities
+joblib   # for saving/loading models
